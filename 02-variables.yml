@@ -1,7 +1,11 @@
 - name: Variables
   hosts: localhost
   connection: local
+  vars:
+    URL: my.google.com
   tasks:
     - name: Print a variable
+      vars:
+        URL: my.devops.com
       ansible.builtin.debug:
         msg: Variable URL is - {{ URL }}
